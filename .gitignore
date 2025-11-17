@@ -12,3 +12,5 @@ __pycache__/
 # Env files
 .env
 *.log
+
+/restaurant/static/
