@@ -16,8 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from restaurant import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('restaurant/', include('restaurant.urls')),
+    # All restaurant API endpoints under /api/
+    path('api/', include('restaurant.urls')),
+
+    # DRF browsable API login/logout
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    
 ]
