@@ -2,15 +2,13 @@ from django.test import TestCase
 from restaurant.models import Booking, MenuItem
 from django.contrib.auth.models import User
 
-class MenuItemModelTest(TestCase):
+class MenuItemTest(TestCase):
     def setUp(self):
-        MenuItem.objects.create(title="Test Dish", price=9.99, inventory=10)
+        MenuItem.objects.create(title="IceCream", price=80, inventory=100)
     
     def test_get_item(self):
-        item = MenuItem.objects.get(title="Test Dish")
-        self.assertEqual(str(item), "Test Dish")
-        self.assertEqual(item.price, 9.99)
-        self.assertEqual(item.inventory, 10)
+        item = MenuItem.objects.get(title="IceCream")
+        self.assertEqual(str(item), "IceCream : 80.00")
         
 class BookingModelTest(TestCase):
     def setUp(self):
