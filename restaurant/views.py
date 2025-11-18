@@ -5,8 +5,9 @@ from restaurant.models import Booking, MenuItem
 from restaurant.serializers import UserSerializer, BookingSerializer, MenuSerializer
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 
-# def index(request):
-#     return render(request, 'index.html', {})
+def index(request):
+    return render(request, 'index.html', {})
+
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
