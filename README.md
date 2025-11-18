@@ -11,4 +11,6 @@
 
 /auth/users/
 
+api/index/
+
 
